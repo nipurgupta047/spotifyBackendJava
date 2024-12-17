@@ -22,12 +22,12 @@ public class AuthController {
 
     @PostMapping("/isLoggedIn")
     public String isLoggedIn(@RequestBody IsLoggedInReq req){
-        return authService.isLoggedIn(req.getToken());
+        return authService.isLoggedIn(req.getToken(), JWT_SECRET_KEY);
     }
 
     @PostMapping("/login")
     public LoginRes login(@RequestBody LoginReq req){
-        return new LoginRes("logged" + req.getUsername(), "abcd" + req.getPassword());
+        return authService.login(req.getUsername(), req.getPassword());
     }
 
 }
