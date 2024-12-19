@@ -1,17 +1,28 @@
-package com.spotifyClone.spotifyBackend.dom;
+package com.spotifyClone.spotifyBackend.features.userActions;
 
-public class playlistSong {
+public class UsernameSongReq {
+
+    private String username;
     private String songId;
     private String songName;
     private String songImageUrl;
 
-    public playlistSong() {
+    public UsernameSongReq() {
     }
 
-    public playlistSong(String songId, String songImageUrl, String songName) {
+    public UsernameSongReq(String username, String songId, String songName, String songImageUrl) {
+        this.username = username;
         this.songId = songId;
-        this.songImageUrl = songImageUrl;
         this.songName = songName;
+        this.songImageUrl = songImageUrl;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getSongId() {
